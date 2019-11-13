@@ -9,7 +9,7 @@ scriptdir=`dirname "$0"` ;
 source "$scriptdir/config.ini" ;
 #
 # Get your language
-lang="${MDM_LANG%_*}" ;
+lang=$(locale | grep LANGUAGE | cut -d= -f2 | cut -d_ -f1) ;
 #
 # Imort the translation suiting your language. 
 # If there's no translation for your language, import the english one.

@@ -52,7 +52,7 @@ langdir="$scriptdir/lang" ;
 source "$scriptdir/config.ini" ;
 #
 # Get your language
-lang="${MDM_LANG%_*}" ;
+lang=$(locale | grep LANGUAGE | cut -d= -f2 | cut -d_ -f1) ;
 #
 # Import the translation suiting your language. 
 # If there's no translation for your language, import the english one.
@@ -88,7 +88,7 @@ if ! SELTESSLANG=$(zenity --list \
                      --title "$msg_sellang_title" \
                      --text="$msg_sellang_text" \
                      --width=400 --height=150 \
-                     --radiolist --column "" --column "" TRUE "$lang1" FALSE "$lang2" FALSE "$lang3" ) ;
+                     --radiolist --column "" --column "" TRUE "$lang1" FALSE "$lang2" FALSE "$lang3" FALSE "$lang4" ) ;
 then exit ;
 fi ;
 #
@@ -96,6 +96,7 @@ case "$SELTESSLANG" in
 "$ger")TESSLANG="deu";;
 "$fre")TESSLANG="fra";;
 "$eng")TESSLANG="eng";;
+"$tur")TESSLANG="tur";;
 esac 
 #
 # Go into directory
