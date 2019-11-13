@@ -52,7 +52,7 @@ langdir="$scriptdir/lang" ;
 source "$scriptdir/config.ini" ;
 #
 # Get your language
-lang="${MDM_LANG%_*}" ;
+lang=$(locale | grep LANGUAGE | cut -d= -f2 | cut -d_ -f1) ;
 #
 # Import the translation suiting your language. 
 # If there's no translation for your language, import the english one.
