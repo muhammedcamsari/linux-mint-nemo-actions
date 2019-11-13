@@ -96,7 +96,7 @@ case "$SELTESSLANG" in
 "$ger")TESSLANG="deu";;
 "$fre")TESSLANG="fra";;
 "$eng")TESSLANG="eng";;
-"$tr")TESSLANG="tur";;
+"$tur")TESSLANG="tur";;
 esac 
 #
 # Go into directory
