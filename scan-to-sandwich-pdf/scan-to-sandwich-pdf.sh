@@ -88,7 +88,7 @@ if ! SELTESSLANG=$(zenity --list \
                      --title "$msg_sellang_title" \
                      --text="$msg_sellang_text" \
                      --width=400 --height=150 \
-                     --radiolist --column "" --column "" TRUE "$lang1" FALSE "$lang2" FALSE "$lang3" ) ;
+                     --radiolist --column "" --column "" TRUE "$lang1" FALSE "$lang2" FALSE "$lang3" FALSE "$lang4" ) ;
 then exit ;
 fi ;
 #
@@ -96,6 +96,7 @@ case "$SELTESSLANG" in
 "$ger")TESSLANG="deu";;
 "$fre")TESSLANG="fra";;
 "$eng")TESSLANG="eng";;
+"$tr")TESSLANG="tur";;
 esac 
 #
 # Go into directory
